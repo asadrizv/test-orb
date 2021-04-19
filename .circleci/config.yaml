@@ -1,0 +1,14 @@
+version: 2.1
+
+orbs:
+  circleci-orb: test-chk/circleci-orb@0.0.9
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:4.8.2
+    steps:
+      - checkout
+      - circleci-orb/scan:
+          kubernetes-manifest: "kubernetes-manifest.yaml"
+          chkk-access-token: $CHKK_ACCESS_TOKEN
