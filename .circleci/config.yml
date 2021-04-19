@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  circleci-orb: test-chk/circleci-orb@0.0.9
+  circleci-orb: test-chk/circleci-orb@0.0.10
 
 jobs:
   build:
@@ -12,3 +12,5 @@ jobs:
       - circleci-orb/scan:
           kubernetes-manifest: "kubernetes-manifest.yaml"
           chkk-access-token: $CHKK_ACCESS_TOKEN
+          skip-checks: "CHKK-K8S-59,CHKK-K8S-65"
+          args: "--hide-diff --continue-on-error"
