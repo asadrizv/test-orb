@@ -15,30 +15,3 @@ jobs:
           chkk-access-token: $CHKK_ACCESS_TOKEN
           skip-checks: "CHKK-K8S-59,CHKK-K8S-65"
           args: "--continue-on-error"
-
-      - circleci-orb/scan:
-          name: "Test orb with all checks"
-          kubernetes-manifest: "kubernetes-manifest.yaml"
-          chkk-access-token: $CHKK_ACCESS_TOKEN
-          args: "--continue-on-error"
-
-      - circleci-orb/scan:
-          name: "Test orb with enabled checks"
-          kubernetes-manifest: "kubernetes-manifest.yaml"
-          chkk-access-token: $CHKK_ACCESS_TOKEN
-          enable-checks: "CHKK-K8S-59,CHKK-K8S-65"
-          args: "--continue-on-error"
-
-      - circleci-orb/scan:
-          name: "Test orb with skipped checks and hide-diff"
-          kubernetes-manifest: "kubernetes-manifest.yaml"
-          chkk-access-token: $CHKK_ACCESS_TOKEN
-          skip-checks: "CHKK-K8S-59,CHKK-K8S-65"
-          args: "--hide-diff --continue-on-error"
-
-      - circleci-orb/scan:
-          name: "Test orb with enabled checks and hide-diff"
-          kubernetes-manifest: "kubernetes-manifest.yaml"
-          chkk-access-token: $CHKK_ACCESS_TOKEN
-          enable-checks: "CHKK-K8S-59,CHKK-K8S-65"
-          args: "--hide-diff --continue-on-error"
