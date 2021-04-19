@@ -12,5 +12,5 @@ jobs:
       - circleci-orb/scan:
           kubernetes-manifest: "kubernetes-manifest.yaml"
           chkk-access-token: $CHKK_ACCESS_TOKEN
-          run-checks: "CHKK-K8S-59,CHKK-K8S-65"
+          enable-checks: "CHKK-K8S-59,CHKK-K8S-65"
           args: "--hide-diff --continue-on-error"
